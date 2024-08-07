@@ -73,9 +73,9 @@ app.get("/todos/", async (request, response) => {
           todo LIKE '%${search_q}%' 
           AND status='${status}';`;
       break;
+  }
       data = await db.all(getTodosQuery);
       response.send(data);
-  }
 });
 
 // API 2
